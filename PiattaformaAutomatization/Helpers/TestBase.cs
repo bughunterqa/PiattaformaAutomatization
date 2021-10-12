@@ -1,44 +1,38 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
-
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using PiattaformaAutomatization.PageObjects.Pages;
+using System.IO;
 
 namespace PiattaformaAutomatization
 {
     [TestFixture]
     public class TestBase
     {
-        
+
 
         [SetUp]
-        public static void Initialize()
+        public void Initialize()
         {
-            
-           
             Browser.Initialize();
-            //UserGenerator.Initialize();
         }
 
-       /* [TestFixtureTearDown]
+
+        [OneTimeTearDown]
         public static void TestFixtureTearDown()
         {
             Browser.Close();
-        }*/
+        }
+
 
         [TearDown]
         public static void TearDown()
         {
+            //Browser.Goto("");
 
-            Browser.Close();
-            // Implement clean logout for user, remove session storage etc...) 
-
-            //will hack for now
-            /*Browser.Goto("");*/
-
-            //if(Pages.TopNavigation.IsLoggedIn())
-            //    Pages.TopNavigation.LogOut();
-
-            //if(UserGenerator.LastGeneratedUser != null)
-            //    Browser.Goto("????");
         }
     }
 }

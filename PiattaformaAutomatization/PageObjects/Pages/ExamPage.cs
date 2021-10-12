@@ -1,8 +1,12 @@
-﻿using PiattaformaAutomatization.Helpers;
+﻿using Microsoft.Data.SqlClient;
+using NUnit.Allure.Steps;
+using NUnit.Framework;
+using PiattaformaAutomatization.Helpers;
 using PiattaformaAutomatization.TestData;
 using PiattaformaAutomatization.WebElements;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +27,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
         }
 
 
-
+        [AllureStep("Enter text in the Content field")]
         public ExamPage EnterTestContent()
         {
             int expectedCountWords = GetExpectedCountWords();
@@ -59,6 +63,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
             return countWords;
         }
 
+        [AllureStep("Send for check test article")]
         public UserSummaryPage SendTestContent()
         {
             WaitUntil.WaitElement(Browser._Driver, btnSend);
@@ -67,5 +72,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
 
             return Pages.UserSummary;
         }
+
+        
     }
 }

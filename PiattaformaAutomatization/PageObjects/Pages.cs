@@ -76,5 +76,15 @@ namespace PiattaformaAutomatization.PageObjects.Pages
         {
             get { return GetPage<ToAssignPage>(); }
         }
+
+        public static UsersPendingPage UsersPending
+        {
+            get { return GetPage<UsersPendingPage>(); }
+        }
+
+        public static UserOverviewPage UserOverview
+        {
+            get { return GetPage<UserOverviewPage>(); }
+        }
     }
 }

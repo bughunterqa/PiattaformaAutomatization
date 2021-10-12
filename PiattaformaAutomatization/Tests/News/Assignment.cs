@@ -16,7 +16,8 @@ namespace PiattaformaAutomatization.Tests.News
         public void AssignToUser()
         {
             Pages.Login
-                .EnterCredentials(Credentials.AdminEmail, Credentials.AdminPassword)
+                .EnterEmail(Credentials.AdminEmail)
+                .EnterPassword(Credentials.AdminPassword)
                 .PressSignIn();
 
             Pages.AuthorSearching

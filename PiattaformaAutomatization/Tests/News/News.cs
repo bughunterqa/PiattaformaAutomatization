@@ -12,7 +12,8 @@ namespace PiattaformaAutomatization.Tests.News
         public void ArticlePublicationByAdmin()
         {
             Pages.Login
-                .EnterCredentials(Credentials.AdminEmail, Credentials.AdminPassword)
+                .EnterEmail(Credentials.AdminEmail)
+                .EnterPassword(Credentials.AdminPassword)
                 .PressSignIn();
 
             Assert.AreEqual(Browser.Title, Titles.AuthorSearching);

@@ -1,4 +1,5 @@
-﻿using PiattaformaAutomatization.Helpers;
+﻿using NUnit.Allure.Steps;
+using PiattaformaAutomatization.Helpers;
 using PiattaformaAutomatization.WebElements;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
 {
     public class UserSummaryPage : UserSummaryElements
     {
+        [AllureStep("Click on 'Get Started' button to go to the selection of test parameters ")]
         public SelectExamTypePage GetStartedEditorExam()
         {
             WaitUntil.WaitElement(Browser._Driver, btnGetStartedEditorExam);
@@ -24,6 +26,15 @@ namespace PiattaformaAutomatization.PageObjects.Pages
             WaitUntil.WaitElement(Browser._Driver, btnGetStartedProofreaderExam);
 
             btnGetStartedProofreaderExam.Click();
+
+            return Pages.SelectExamType;
+        }
+
+        public SelectExamTypePage GetStartedTranslatorExam()
+        {
+            WaitUntil.WaitElement(Browser._Driver, btnGetStartedTranslatorExam);
+
+            btnGetStartedTranslatorExam.Click();
 
             return Pages.SelectExamType;
         }

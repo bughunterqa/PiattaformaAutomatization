@@ -7,28 +7,31 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace PiattaformaAutomatization
 {
     public class Browser
     {
         public IWebDriver WebDriver { get; set; }
-        public string environmentUrl { get; set; }
-
         private static string baseUrl = "https://creators-anuitex2.contents.com/";
         private static IWebDriver webDriver = new ChromeDriver();
 
+
+
         public Browser(IWebDriver webDriver)
-        {
-            //environmentUrl = ConfigurationManager.AppSettings["Base_URL"];        
+        {     
              WebDriver = webDriver;
         }
 
 
+
+
         public static void Initialize()
         {
+            webDriver.Manage().Cookies.DeleteAllCookies();
             webDriver.Manage().Window.Maximize();
-            Goto("");
+            Goto("login");
         }
 
         public static string Title
@@ -64,7 +67,6 @@ namespace PiattaformaAutomatization
         public static void Close()
         {
             webDriver.Close();
-            webDriver.Quit();
         }
 
         public static string RootPath()
@@ -81,6 +83,11 @@ namespace PiattaformaAutomatization
         {    
             var scrollJS = (IJavaScriptExecutor)webDriver;
             scrollJS.ExecuteScript(script);
+        }
+
+        public static string GetConnectionString()
+        {
+            return "Server=tcp:15.237.142.222,1433;Initial catalog=Test-EDigital1;User ID=anuitex;Password=Pass4contents;TrustServerCertificate=True;";
         }
     }
 }

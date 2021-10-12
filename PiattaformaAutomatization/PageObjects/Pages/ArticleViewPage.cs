@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static NUnit.Core.NUnitFramework;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Reflection;
 using System;
+using NUnit.Framework;
 
 namespace PiattaformaAutomatization.PageObjects.Pages
 {

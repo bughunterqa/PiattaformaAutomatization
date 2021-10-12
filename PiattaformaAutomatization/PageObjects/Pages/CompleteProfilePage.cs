@@ -1,4 +1,5 @@
-﻿using PiattaformaAutomatization.Helpers;
+﻿using NUnit.Allure.Steps;
+using PiattaformaAutomatization.Helpers;
 using PiattaformaAutomatization.WebElements;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
 {
     public class CompleteProfilePage : CompleteProfileElements
     {
+        [AllureStep("Complete profile data")]
         public CompleteProfilePage EnterDataProfile(string name)
         {
             Browser._Driver.SwitchTo().Window(Browser._Driver.WindowHandles.Last());
@@ -27,6 +29,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
             return this;
         }
 
+        [AllureStep("Save profile data")]
         public UserSummaryPage SaveProfileData()
         {
             btnSave.Click();

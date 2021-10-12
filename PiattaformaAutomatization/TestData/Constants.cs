@@ -14,6 +14,8 @@ namespace PiattaformaAutomatization.TestData
 
         public const string AdminEmail = "dev@entiredigital.com";
         public const string AdminPassword = "YaWMJWgh5emWQt4";
+
+        public const string DomainYop = "@yopmail.com";
     }
 
     class Titles

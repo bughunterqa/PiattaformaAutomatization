@@ -1,4 +1,5 @@
-﻿using PiattaformaAutomatization.Helpers;
+﻿using NUnit.Allure.Steps;
+using PiattaformaAutomatization.Helpers;
 using PiattaformaAutomatization.WebElements;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace PiattaformaAutomatization.PageObjects.Pages
             return fromLang;
         }
 
+        [AllureStep("Go to the Editor Exam")]
         public ExamPage StartExam()
         {
             WaitUntil.WaitElement(Browser._Driver, btnStart);
